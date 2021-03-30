@@ -10,7 +10,6 @@ min_list = []
 avrg_list = []
 
 def ask_exit(signame, loop):
-    print(f"got signal {signame}: exit")
     for task in asyncio.all_tasks():
         task.cancel()
 
@@ -31,7 +30,6 @@ async def random_int():
         pass
     loop.stop()
     sys.exit(1)
-
 
 async def max_int(random_int_list):
     result = max(random_int_list)
